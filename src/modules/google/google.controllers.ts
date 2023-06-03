@@ -5,7 +5,7 @@ import {
 } from './google.types'
 import * as googleHelpers from './google.helpers'
 
-const GOOGLE_MAPS_KEY = 'AIzaSyCW9hqL1b7Egf23j3Fg3oi-yxhjZrfZidI'
+const GOOGLE_MAPS_KEY = process.env.GOOGLE_MAPS_KEY
 
 /**
  * Returns array of possible Google Places API results based on input
