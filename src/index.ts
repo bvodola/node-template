@@ -2,8 +2,8 @@ import * as dotenv from 'dotenv'
 dotenv.config()
 
 import express from 'express'
-import authModule from '@bvodola/auth'
-import crudGenerator from '@bvodola/crud'
+// import authModule from '@bvodola/auth'
+// import crudGenerator from '@bvodola/crud'
 import * as models from 'src/models/models'
 
 const app = express()
@@ -30,15 +30,15 @@ app.use('/static', express.static('static/'))
 // ====
 // Auth
 // ====
-const { authMiddleware } = authModule({
-  app,
-  tokenSecret: process.env.TOKEN_SECRET!,
-  passportSecret: process.env.PASSPORT_SECRET!,
-  userModel: models.User,
-})
+// const { authMiddleware } = authModule({
+//   app,
+//   tokenSecret: process.env.TOKEN_SECRET!,
+//   passportSecret: process.env.PASSPORT_SECRET!,
+//   userModel: models.User,
+// })
 
-const userRoutes = crudGenerator(models.User)
-app.use('/users', authMiddleware(), userRoutes)
+// const userRoutes = crudGenerator(models.User)
+// app.use('/users', authMiddleware(), userRoutes)
 
 app.listen(port, () => {
   console.log(`[server]: Server is running at http://localhost:${port}`)
